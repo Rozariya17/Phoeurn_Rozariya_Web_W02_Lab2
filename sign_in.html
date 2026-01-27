@@ -3,18 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in to Git Hub</title>
+    <title>Sign in to GitHub · GitHub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Sign in to GitHub</h1>
-    <form>
-        <label for="username_email">Username or email address</label><br>
-        <input type="text" id="username_email" name="username_email" required placeholder="Username or email address"><br><br>
+<body class="sign_in_page">
 
-        <label for="password">Password</label><br>
-        <input type="password" id="password" name="password" required placeholder="Password"><br><br>
+    <div class="signin-container">
+        <img src="/Picture/github_logo.png" alt="GitHub Logo" class="logo">
+        
+        <h1>Sign in to GitHub</h1>
 
-        <input type="submit" value="Sign in"> 
-    </form>
+        <div class="signin-form">
+            <form>
+                <div class="form-group">
+                    <label for="login">Username or email address</label>
+                    <input type="text" id="login" name="login" class="input-block">
+                </div>
+
+                <div class="form-group">
+                <div class="label-wrapper">
+                    <label for="password">Password</label>
+                    <a href="#" class="label-link">Forgot password?</a>
+                </div>
+                <input type="password" id="password" name="password">
+                </div>
+                        
+                <input type="submit" value="Sign in" class="submit-btn">
+            </form>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <div class="social-login">
+                <button class="btn-social">
+                    <img src="/Picture/google_logo.png" alt=""> Continue with Google
+                </button>
+                <button class="btn-social">
+                    <img src="/Picture/apple_logo.jpg" alt=""> Continue with Apple
+                </button>
+            </div>
+        </div>
+
+        <div class="auth-footer">
+            <p>New to GitHub? <a href="#" class="label-link">Create an account</a></p>
+            <p><a href="#" class="label-link">Sign in with a passkey</a></p>
+        </div>
+    </div>
+
 </body>
 </html>
