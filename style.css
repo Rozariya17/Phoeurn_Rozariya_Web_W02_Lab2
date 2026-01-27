@@ -1,94 +1,94 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1f2328; line-height: 1.5; }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    background-color: #91a1b8;
-    color: #c9d1d9;
+/* Mobile First Layout (Stacked) */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Left/Top Panel */
+.left-panel {
+    background-color: #000;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content h1 { font-size: 32px; margin-bottom: 12px; }
+.hero-content p { color: #8b949e; font-size: 16px; margin-bottom: 20px; }
+.see-whats-included { color: white; text-decoration: none; font-size: 14px; display: block; }
+
+
+/* Right/Bottom Panel */
+.right-panel {
+    background: white;
+    padding: 60px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
+    position: relative;
 }
 
-h1 {
-    font-weight: 300;
-    color: #f0f6fc;
-    margin-bottom: 24px;
+.form-wrapper { width: 100%; max-width: 440px; }
+.form-wrapper h2 { font-size: 24px; margin-bottom: 24px; }
+
+/* Form Elements */
+.social-login { margin-bottom: 20px; }
+.btn-social {
+    width: 100%; padding: 12px; margin-bottom: 10px;
+    border: 1px solid #d0d7de; background: #f6f8fa;
+    border-radius: 6px; cursor: pointer; font-weight: 500;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.btn-social img { width: 18px; }
+
+.divider { text-align: center; border-bottom: 1px solid #d0d7de; line-height: 0.1em; margin: 30px 0; }
+.divider span { background: #fff; padding: 0 10px; color: #6e7781; font-size: 14px; }
+
+.form-group { margin-bottom: 20px; }
+label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+
+input[type="email"], input[type="password"], input[type="text"], select {
+    width: 100%; padding: 12px; border: 1px solid #d0d7de; border-radius: 6px; font-size: 16px;
+    background-color: white;
 }
 
-form {
-    background-color: #546173;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 32px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 8px 24px rgba(253, 253, 253, 0.3);
+.helper-text { font-size: 12px; color: #6e7781; margin-top: 6px; }
+
+/* Checkbox Alignment */
+.email-prefs { margin-top: 30px; margin-bottom: 30px; }
+.prefs-title { margin-bottom: 12px; display: block; font-weight: 600; font-size: 14px; }
+.checkbox-row { display: flex; align-items: flex-start; gap: 12px; }
+.checkbox-row input { width: 18px; height: 18px; margin-top: 2px; }
+.checkbox-row label { font-weight: 400; font-size: 14px; cursor: pointer; }
+
+.submit-btn {
+    width: 100%; padding: 14px; background: #24292f; color: white;
+    border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 16px;
 }
 
+/* Nav Switching */
+.top-nav-desktop { display: none; }
+.top-nav-mobile { margin-bottom: 30px; font-size: 14px; }
+.top-nav-mobile a { color: #58a6ff; text-decoration: none; }
 
-.form-group {
-    margin-bottom: 16px;
-}
+/* DESKTOP VIEW */
+@media (min-width: 850px) {
+    .main-container { flex-direction: row; }
+    .left-panel { width: 45%; text-align: left; padding: 100px 80px; }
+    .right-panel { width: 55%; padding-top: 100px; }
+    
+    .hero-content h1 { font-size: 48px; line-height: 1.1; }
+    .mascot { width: 140px; left: 80px; transform: none; bottom: 60px; }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-input[type="email"],
-input[type="password"],
-input[type="text"],
-select {
-    width: 100%;
-    padding: 8px 12px;
-    background-color: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    color: #f0f6fc;
-    font-size: 14px;
-    box-sizing: border-box;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-input:focus, select:focus {
-    outline: none;
-    border-color: #58a6ff;
-    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 24px;
-}
-
-.checkbox-group label {
-    font-size: 13px;
-    color: #8b949e;
-    cursor: pointer;
-}
-
-input[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #238636;
-    color: white;
-    border: 1px solid rgba(240, 246, 252, 0.1);
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-input[type="submit"]:hover {
-    background-color: #2ea043;
-}
-
-br {
-    display: none;
+    .top-nav-mobile { display: none; }
+    .top-nav-desktop {
+        display: block; position: absolute; top: 30px; right: 40px; font-size: 14px;
+    }
+    .top-nav-desktop a { color: #0969da; text-decoration: none; font-weight: 500; }
 }
